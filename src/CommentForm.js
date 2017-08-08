@@ -25,7 +25,6 @@ class CommentForm extends Component {
     this.props.onCommentSubmit({ author: author, text: text });
     this.setState({ author: '', text: '' });
   }
-  
   render() {
     return (
       <form style={ style.commentForm } onSubmit={ this.handleSubmit }>
@@ -44,7 +43,7 @@ class CommentForm extends Component {
         <input
           type='submit'
           style={ style.commentFormPost }
-          value='Post' />
+          value='Post'/>
       </form>
     )
   }
