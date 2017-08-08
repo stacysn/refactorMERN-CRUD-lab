@@ -50,15 +50,12 @@ class Comment extends Component {
   handleAuthorChange(e) {
     this.setState({ author: e.target.value });
   }
-  rawMarkup() {
-    let rawMarkup = marked(this.props.children.toString());
-    return { __html: rawMarkup };
-  }
+
   render() {
     return (
       <div style={ style.comment }>
         <h3>{this.props.author}</h3>
-        <span dangerouslySetInnerHTML={ this.rawMarkup() } />
+        <span>{this.props.children}</span>
         <a style={ style.updateLink } href='#' onClick={ this.updateComment }>update</a>
         <a style={ style.deleteLink } href='#' onClick={ this.deleteComment }>delete</a>
         { (this.state.toBeUpdated)
